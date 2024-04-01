@@ -10,7 +10,8 @@ public class Diario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
-    @Column
+    @OneToOne
+    @JoinColumn(name = "professor_matricula")
     private Professor professorResponsavel;
     @Column
     private String nomeDisciplina;
