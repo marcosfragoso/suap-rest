@@ -5,10 +5,12 @@ import jakarta.persistence.*;
 import java.util.Objects;
 @Entity
 public class Aluno {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long matricula;
-    @Column
+
+    @Column(nullable = false)
     private  String nome;
 
     public Long getMatricula() {

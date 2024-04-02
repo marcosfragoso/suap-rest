@@ -7,16 +7,21 @@ import java.util.Set;
 
 @Entity
 public class Diario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
+
     @ManyToOne
     @JoinColumn(name = "professor_matricula")
     private Professor professorResponsavel;
-    @Column
+
+    @Column(nullable = false)
     private String nomeDisciplina;
-    @Column
+
+    @Column(nullable = false)
     private String periodo;
+
     @ManyToMany
     @JoinTable(name="diario_alunos",
             joinColumns={@JoinColumn(name="diario_codigo")},

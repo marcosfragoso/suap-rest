@@ -12,6 +12,7 @@ public class AlunoController {
 
     @Autowired
     private AlunoService alunoService;
+
     @GetMapping
     public List<Aluno> listarAlunos() {
         return alunoService.listarAlunos();

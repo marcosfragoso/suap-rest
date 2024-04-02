@@ -5,12 +5,15 @@ import jakarta.persistence.*;
 import java.util.Objects;
 @Entity
 public class Professor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long matricula;
-    @Column
+
+    @Column(nullable = false)
     private String nome;
-    @Column
+
+    @Column(nullable = false)
     private String area;
 
     public Long getMatricula() {

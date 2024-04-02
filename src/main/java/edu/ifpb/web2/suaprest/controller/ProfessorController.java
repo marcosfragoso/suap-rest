@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/professores")
 public class ProfessorController {
+
     @Autowired
     private ProfessorService professorService;
 
@@ -27,6 +28,7 @@ public class ProfessorController {
     public Professor atualizarProfessor(@RequestBody Professor professor) {
         return professorService.atualizarProfessor(professor);
     }
+
     @DeleteMapping
     public String deletarProfessor(@RequestBody Professor professor) {
         return professorService.deletarProfessor(professor);
