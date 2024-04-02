@@ -10,15 +10,17 @@ public class Diario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "professor_matricula")
     private Professor professorResponsavel;
     @Column
     private String nomeDisciplina;
     @Column
     private String periodo;
-    @OneToMany
-    @JoinColumn(name = "aluno_matricula")
+    @ManyToMany
+    @JoinTable(name="diario_alunos",
+            joinColumns={@JoinColumn(name="diario_codigo")},
+            inverseJoinColumns={@JoinColumn(name="aluno_matricula")})
     private Set<Aluno> alunos;
 
     public Long getCodigo() {
