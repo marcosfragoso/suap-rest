@@ -1,7 +1,9 @@
 package edu.ifpb.web2.suaprest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 @Entity
 @Table(name = "Professor")
@@ -16,6 +18,10 @@ public class Professor {
 
     @Column(nullable = false)
     private String area;
+
+    @ManyToMany(mappedBy = "professores")
+    @JsonIgnore
+    private List<Aluno> alunos;
 
     public Long getMatricula() {
         return matricula;
