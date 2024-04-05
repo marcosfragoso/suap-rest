@@ -12,7 +12,7 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
     @Query(value = ""
             + "select a.* "
             + " from Aluno a, aluno_professor ap"
-            + " where a.matriccula = ap.matricula_aluno and ap.matricula_professor = :cod_professor", nativeQuery = true
+            + " where a.matricula = ap.matricula_aluno and ap.matricula_professor = :cod_professor", nativeQuery = true
     )
     List<Aluno> findAlunoByProfessor(@Param("cod_professor") Long cod_professor);
 

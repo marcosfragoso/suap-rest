@@ -4,6 +4,8 @@ import edu.ifpb.web2.suaprest.model.Aluno;
 import edu.ifpb.web2.suaprest.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -28,5 +30,10 @@ public class AlunoService {
     public String deletarAluno(Aluno alunoRequest) {
         alunoRepository.deleteById(alunoRequest.getMatricula());
         return "Aluno deletado com sucesso.";
+    }
+
+
+    public List<Aluno> findAlunoByProfessor(Long cod_professor) {
+        return alunoRepository.findAlunoByProfessor(cod_professor);
     }
 }
