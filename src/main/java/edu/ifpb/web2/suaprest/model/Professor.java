@@ -10,7 +10,8 @@ import java.util.Objects;
 public class Professor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "professor_seq")
+    @SequenceGenerator(name= "professor_seq",sequenceName= "professor_seq", allocationSize = 1)
     private Long matricula;
 
     @Column(nullable = false)

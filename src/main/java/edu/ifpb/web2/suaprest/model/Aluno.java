@@ -27,7 +27,7 @@ public class Aluno {
     private Curso curso;
 
     @ManyToMany
-    @JoinTable(name = "aluno_profesor",
+    @JoinTable(name = "aluno_professor",
             joinColumns = {@JoinColumn(name = "matricula_aluno")},
             inverseJoinColumns = {@JoinColumn(name = "matricula_professor")}
     )
