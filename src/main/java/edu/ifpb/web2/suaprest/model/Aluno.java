@@ -75,6 +75,10 @@ public class Aluno {
         return "Aluno{" +
                 "matricula=" + matricula +
                 ", nome='" + nome + '\'' +
+                ", endereco=" + endereco +
+                ", responsavel=" + responsavel +
+                ", curso=" + curso +
+                ", professores=" + professores +
                 '}';
     }
 }

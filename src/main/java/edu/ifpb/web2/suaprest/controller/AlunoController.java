@@ -33,9 +33,4 @@ public class AlunoController {
         return alunoService.deletarAluno(alunoRequest);
     }
 
-    @GetMapping(value = "/{cod_professor}/professores")
-    public List<Aluno> findAlunoByProfessor(@PathVariable Long cod_professor) {
-        return alunoService.findAlunoByProfessor(cod_professor);
-    }
-
 }

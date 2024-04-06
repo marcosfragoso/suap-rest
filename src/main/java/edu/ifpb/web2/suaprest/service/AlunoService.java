@@ -31,9 +31,4 @@ public class AlunoService {
         alunoRepository.deleteById(alunoRequest.getMatricula());
         return "Aluno deletado com sucesso.";
     }
-
-
-    public List<Aluno> findAlunoByProfessor(Long cod_professor) {
-        return alunoRepository.findAlunoByProfessor(cod_professor);
-    }
 }
