@@ -3,6 +3,7 @@ package edu.ifpb.web2.suaprest.model;
 import jakarta.persistence.*;
 
 import java.util.Objects;
+
 @Entity
 @Table(name = "Servidor")
 public class Servidor {
