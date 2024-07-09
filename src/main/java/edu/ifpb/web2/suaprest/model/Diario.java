@@ -17,8 +17,9 @@ public class Diario {
     @JoinColumn(name = "professor_matricula")
     private Professor professorResponsavel;
 
-    @Column(nullable = false)
-    private String nomeDisciplina;
+    @ManyToOne
+    @JoinColumn(name = "disciplina_id")
+    private Disciplina disciplina;
 
     @Column(nullable = false)
     private String periodo;
@@ -45,12 +46,12 @@ public class Diario {
         this.professorResponsavel = professorResponsavel;
     }
 
-    public String getNomeDisciplina() {
-        return nomeDisciplina;
+    public Disciplina getDisciplina() {
+        return disciplina;
     }
 
-    public void setNomeDisciplina(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 
     public String getPeriodo() {
@@ -74,12 +75,12 @@ public class Diario {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Diario diario = (Diario) o;
-        return Objects.equals(codigo, diario.codigo) && Objects.equals(professorResponsavel, diario.professorResponsavel) && Objects.equals(nomeDisciplina, diario.nomeDisciplina) && Objects.equals(periodo, diario.periodo) && Objects.equals(alunos, diario.alunos);
+        return Objects.equals(codigo, diario.codigo) && Objects.equals(professorResponsavel, diario.professorResponsavel) && Objects.equals(disciplina, diario.disciplina) && Objects.equals(periodo, diario.periodo) && Objects.equals(alunos, diario.alunos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigo, professorResponsavel, nomeDisciplina, periodo, alunos);
+        return Objects.hash(codigo, professorResponsavel, disciplina, periodo, alunos);
     }
 
     @Override
@@ -87,7 +88,7 @@ public class Diario {
         return "Diario{" +
                 "codigo=" + codigo +
                 ", professorResponsavel=" + professorResponsavel +
-                ", nomeDisciplina='" + nomeDisciplina + '\'' +
+                ", disciplina=" + disciplina +
                 ", periodo='" + periodo + '\'' +
                 ", alunos=" + alunos +
                 '}';

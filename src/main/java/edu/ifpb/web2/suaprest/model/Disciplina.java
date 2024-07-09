@@ -17,13 +17,14 @@ public class Disciplina {
     private String nome;
 
     @ManyToOne
-    @JoinColumn(name = "matricula")
+    @JoinColumn(name = "professor_matricula")
     private Professor professor;
 
     @Column
     private int cargaHoraria;
 
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "cod_curso")
     private Curso curso;
 
     public Long getId() {
